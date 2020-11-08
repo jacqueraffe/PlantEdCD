@@ -9,35 +9,45 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+  var body: some View {
+    NavigationView {
+      PlantList()
+    }
+  }
+}
+
+struct PlantList: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Plant.name, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var plants: FetchedResults<Plant>
 
     var body: some View {
         List {
-            ForEach(items) { item in
-                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+            ForEach(plants) { plant in
+                Text("Plant named \(plant.name!)")
             }
-            .onDelete(perform: deleteItems)
+            .onDelete(perform: deletePlants)
         }
         .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
+            HStack {
+                #if os(iOS)
+                EditButton()
+                #endif
 
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
+                Button(action: addPlant) {
+                    Label("Add Plant", systemImage: "plus")
+                }
             }
         }
     }
 
-    private func addItem() {
+    private func addPlant() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newPlant = Plant(context: viewContext)
+            newPlant.name = "Layla"
 
             do {
                 try viewContext.save()
@@ -50,9 +60,9 @@ struct ContentView: View {
         }
     }
 
-    private func deleteItems(offsets: IndexSet) {
+    private func deletePlants(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { plants[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()
@@ -65,13 +75,6 @@ struct ContentView: View {
         }
     }
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
