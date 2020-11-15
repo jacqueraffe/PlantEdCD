@@ -1,0 +1,48 @@
+//
+//  PlantCreationSheet.swift
+//  PlantEdCD
+//
+//  Created by Jacqueline Palevich on 11/14/20.
+//
+
+import CoreData
+import SwiftUI
+
+struct PlantCreationSheet: View {
+    let context: NSManagedObjectContext
+    @ObservedObject var plant: Plant
+    
+    let dismissAction: () -> Void
+    
+    @State private var errorAlertIsPresented = false
+    @State private var errorAlertTitle = " "
+    
+    var body: some View {
+        NavigationView{
+            PlantProfile(plant: plant)
+                .alert(
+                    isPresented: $errorAlertIsPresented,
+                    content: { Alert(title: Text(errorAlertTitle))})
+                .navigationBarTitle("New Plant")
+                .navigationBarItems(
+                    leading: Button(
+                        action: self.dismissAction,
+                        label: { Text("Cancel")}),
+                    trailing: Button(
+                        action: self.save,
+                        label: {Text("Save")}))
+        }
+    }
+    
+    private func save() {
+        do {
+            try context.save()
+                dismissAction()
+        } catch {
+            errorAlertTitle = (error as? LocalizedError)?.errorDescription ?? "An error has occurred"
+            errorAlertIsPresented = true
+        }
+        
+    
+    }
+}
