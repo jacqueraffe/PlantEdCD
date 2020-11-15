@@ -21,7 +21,9 @@ struct PlantList: View {
     var body: some View {
         List {
             ForEach(plants) { plant in
-                Text("Plant named \(plant.name!)")
+                NavigationLink(destination: editorView(for: plant)){
+                    Text("\(plant.name!)")
+                }
             }
             .onDelete(perform: deletePlants)
         }
@@ -39,6 +41,13 @@ struct PlantList: View {
                     content: {self.newPlantCreationSheet})
             }
         }
+    }
+    
+    private func editorView(for plant: Plant) -> some View {
+        PlantEditor(
+            context: viewContext,
+            plant: plant)
+            .navigationBarTitle(plant.wrappedName)
     }
     
     private var newPlantCreationSheet: some View {
