@@ -28,5 +28,5 @@ extension Plant {
             type!.name = newValue
         }
     }
-    
+
 }

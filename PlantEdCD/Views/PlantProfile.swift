@@ -14,10 +14,22 @@ struct PlantProfile: View {
     private let pasteboard = UIPasteboard.general
     
     var body: some View {
-        List{
+        
+        let wateringFrequencyChoice = Binding(
+            get: { Int(self.plant.wateringFrequency)},
+            set: {self.plant.wateringFrequency = Int16($0)}
+        )
+        return List{
             TextField("Name", text: $plant.wrappedName)
             TextField("Type", text: $plant.typeName)
                 .disableAutocorrection(true)
+            Picker(selection: wateringFrequencyChoice, label: Text("Watering Frequency")) {
+                ForEach(1 ..< 31) {
+                    Text("\($0)")
+                }
+            }
+             //   .pickerStyle(WheelPickerStyle())
+            
             if let photo = plant.photo{
                 Image(uiImage: photo)
                     .resizable()
