@@ -23,6 +23,9 @@ struct PlantProfile: View {
             TextField("Name", text: $plant.wrappedName)
             TextField("Type", text: $plant.typeName)
                 .disableAutocorrection(true)
+            DatePicker(selection: $plant.wrappedLastWatered, in: ...Date(), displayedComponents: .date){
+                Text("Select last date watered")
+            }
             Picker(selection: wateringFrequencyChoice, label: Text("Watering Frequency")) {
                 ForEach(1 ..< 31) {
                     Text("\($0)")

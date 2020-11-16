@@ -28,5 +28,15 @@ extension Plant {
             type!.name = newValue
         }
     }
+    
+    var wrappedLastWatered: Date {
+        get {
+            lastWatered ?? Date()
+        }
+        set(newValue) {
+            objectWillChange.send()
+            lastWatered = newValue
+        }
+    }
 
 }
