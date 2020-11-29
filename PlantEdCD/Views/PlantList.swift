@@ -22,7 +22,7 @@ struct PlantList: View {
         List {
             ForEach(plants) { plant in
                 NavigationLink(destination: editorView(for: plant)){
-                    Text("\(plant.name!)")
+                    PlantRow(plant: plant)
                 }
             }
             .onDelete(perform: deletePlants)

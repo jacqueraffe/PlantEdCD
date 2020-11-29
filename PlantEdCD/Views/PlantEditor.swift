@@ -16,7 +16,9 @@ struct PlantEditor: View {
         PlantProfile(plant: plant)
             .onDisappear(perform: {
                 do{
+                    plant.nextWater = plant.computedNextWater
                     try context.save()
+                    Notifier.updateNotifications(context: context)
                 } catch {
                     let nsError = error as NSError
                     fatalError("Unresolved error \(nsError), \(nsError.userInfo)")

@@ -36,8 +36,10 @@ struct PlantCreationSheet: View {
     
     private func save() {
         do {
+            plant.nextWater = plant.computedNextWater
             try context.save()
-                dismissAction()
+            Notifier.updateNotifications(context: context)
+            dismissAction()
         } catch {
             errorAlertTitle = (error as? LocalizedError)?.errorDescription ?? "An error has occurred"
             errorAlertIsPresented = true

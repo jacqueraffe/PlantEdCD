@@ -27,8 +27,8 @@ struct PlantProfile: View {
                 Text("Select last date watered")
             }
             Picker(selection: wateringFrequencyChoice, label: Text("Watering Frequency")) {
-                ForEach(1 ..< 31) {
-                    Text("\($0)")
+                ForEach(0 ..< 31) {
+                    Text($0 == 0 ? "None" : "\($0)")
                 }
             }
              //   .pickerStyle(WheelPickerStyle())

@@ -3,6 +3,7 @@
     <entity name="Plant" representedClassName="Plant" syncable="YES" codeGenerationType="class">
         <attribute name="lastWatered" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="nextWater" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="photo" optional="YES" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIKit.UIImage"/>
         <attribute name="wateringFrequency" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Type" inverseName="plants" inverseEntity="Type"/>
@@ -12,7 +13,7 @@
         <relationship name="plants" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Plant" inverseName="type" inverseEntity="Plant"/>
     </entity>
     <elements>
-        <element name="Plant" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Plant" positionX="-63" positionY="-18" width="128" height="133"/>
         <element name="Type" positionX="-63" positionY="9" width="128" height="73"/>
     </elements>
 </model>

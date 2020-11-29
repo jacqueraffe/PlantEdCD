@@ -16,6 +16,14 @@ extension Plant {
         }
     }
     
+    var computedNextWater: Date? {
+        if wateringFrequency > 0, let lastWatered = lastWatered {
+            return Calendar.current.date(byAdding: .day, value: Int(wateringFrequency), to: lastWatered)!
+        } else {
+            return nil
+        }
+    }
+    
     var typeName: String {
         get {
             type?.name ?? ""
@@ -38,5 +46,13 @@ extension Plant {
             lastWatered = newValue
         }
     }
+    
+}
 
+extension Date {
+  var short: String {
+    let formatter1 = DateFormatter()
+    formatter1.dateStyle = .short
+    return formatter1.string(from: self)
+  }
 }
