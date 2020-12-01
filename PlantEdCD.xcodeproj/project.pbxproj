@@ -30,7 +30,7 @@
 		4F386E132560D29F00A0E91B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		4F386E162560D7B300A0E91B /* PlantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantList.swift; sourceTree = "<group>"; };
 		4F386E192560DCDD00A0E91B /* PlantEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEditor.swift; sourceTree = "<group>"; };
-		4F46A038254CAE1C005B2738 /* PlantEdCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantEdCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F46A038254CAE1C005B2738 /* PlantEd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantEd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F46A03B254CAE1C005B2738 /* PlantEdCDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEdCDApp.swift; sourceTree = "<group>"; };
 		4F46A03D254CAE1C005B2738 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4F46A03F254CAE21005B2738 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		4F46A039254CAE1C005B2738 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4F46A038254CAE1C005B2738 /* PlantEdCD.app */,
+				4F46A038254CAE1C005B2738 /* PlantEd.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,9 +121,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4F46A037254CAE1C005B2738 /* PlantEdCD */ = {
+		4F46A037254CAE1C005B2738 /* PlantEd */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4F46A04C254CAE21005B2738 /* Build configuration list for PBXNativeTarget "PlantEdCD" */;
+			buildConfigurationList = 4F46A04C254CAE21005B2738 /* Build configuration list for PBXNativeTarget "PlantEd" */;
 			buildPhases = (
 				4F46A034254CAE1C005B2738 /* Sources */,
 				4F46A035254CAE1C005B2738 /* Frameworks */,
@@ -133,9 +133,9 @@
 			);
 			dependencies = (
 			);
-			name = PlantEdCD;
+			name = PlantEd;
 			productName = PlantEdCD;
-			productReference = 4F46A038254CAE1C005B2738 /* PlantEdCD.app */;
+			productReference = 4F46A038254CAE1C005B2738 /* PlantEd.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -165,7 +165,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4F46A037254CAE1C005B2738 /* PlantEdCD */,
+				4F46A037254CAE1C005B2738 /* PlantEd */,
 			);
 		};
 /* End PBXProject section */
@@ -378,7 +378,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4F46A04C254CAE21005B2738 /* Build configuration list for PBXNativeTarget "PlantEdCD" */ = {
+		4F46A04C254CAE21005B2738 /* Build configuration list for PBXNativeTarget "PlantEd" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4F46A04D254CAE21005B2738 /* Debug */,
