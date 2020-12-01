@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WateringSchedule: View {
+    //sorted by next water date, needs to be watered before today
     @FetchRequest(entity:  Plant.entity(),
                   sortDescriptors: [NSSortDescriptor(keyPath: \Plant.nextWater, ascending: true)],
                   predicate: NSCompoundPredicate(andPredicateWithSubpredicates: [
@@ -28,14 +29,18 @@ struct WateringSchedule: View {
     
     var body: some View {
         List{
-            Section(header: Text("Water Now")){
-                ForEach(waterNowPlants, id: \.self) { plant in
-                    WateringScheduleRow(plant: plant)
+            if !waterNowPlants.isEmpty {
+                Section(header: Text("Water Now")){
+                    ForEach(waterNowPlants, id: \.self) { plant in
+                        WateringScheduleRow(plant: plant)
+                    }
                 }
             }
-            Section(header: Text("Water Soon")){
-                ForEach(waterSoonPlants, id: \.self) { plant in
-                    WateringScheduleRow(plant: plant)
+            if !waterSoonPlants.isEmpty {
+                Section(header: Text("Water Soon")){
+                    ForEach(waterSoonPlants, id: \.self) { plant in
+                        WateringScheduleRow(plant: plant)
+                    }
                 }
             }
         }.navigationTitle(Text("Watering Schedule"))
