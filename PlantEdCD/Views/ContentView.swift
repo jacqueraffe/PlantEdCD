@@ -17,17 +17,16 @@ struct ContentView: View {
                     Image(systemName: "leaf.fill")
                     Text("Plants")
                 }
-            typeListTab
-                .tabItem{
-                    Image(systemName: "list.dash")
-                    Text("Types")
-                }
             wateringScheduleTab
                 .tabItem{
                     Image(systemName: "calendar.badge.clock")
                     Text("Schedule")
                 }
-            
+            typeListTab
+                .tabItem{
+                    Image(systemName: "list.dash")
+                    Text("Types")
+                }
         }
     }
     
@@ -40,12 +39,14 @@ struct ContentView: View {
         }
     }
     
-    var typeListTab: some View {
-        Text("Types Coming Soon!")
+    var wateringScheduleTab: some View {
+        NavigationView {
+            WateringSchedule()
+        }
     }
     
-    var wateringScheduleTab: some View {
-        Text("Calender Coming Soon!")
+    var typeListTab: some View {
+        Text("Types Coming Soon!")
     }
     
 }

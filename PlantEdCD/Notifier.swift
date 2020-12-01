@@ -41,14 +41,14 @@ struct Notifier {
 
       // Group by nextRead date.
 
-      for (nextRead, plants) in Dictionary(grouping: plants, by: { $0.nextWater! }) {
+      for (nextWater, plants) in Dictionary(grouping: plants, by: { $0.nextWater! }) {
         let plantNames = plants.compactMap(\.name).joined(separator:", ")
         let content = UNMutableNotificationContent()
         content.title = "Water plants"
         content.subtitle = plantNames
         content.sound = UNNotificationSound.default
 
-        let triggerDate = Calendar.current.dateComponents([.year,.month,.day], from: nextRead)
+        let triggerDate = Calendar.current.dateComponents([.year,.month,.day], from: nextWater)
         let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString,
                                             content: content, trigger: trigger)

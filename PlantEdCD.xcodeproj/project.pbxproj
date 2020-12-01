@@ -22,6 +22,8 @@
 		4F46A055254CB2AC005B2738 /* Plant+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F46A054254CB2AC005B2738 /* Plant+Helpers.swift */; };
 		4FC0A0892574534800D0F360 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0A0882574534800D0F360 /* Notifier.swift */; };
 		4FC0A08C257458CC00D0F360 /* PlantRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0A08B257458CC00D0F360 /* PlantRow.swift */; };
+		4FCC6EA42576240E00CF99DA /* WateringSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6EA32576240E00CF99DA /* WateringSchedule.swift */; };
+		4FCC6EA7257627CD00CF99DA /* WateringScheduleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6EA6257627CD00CF99DA /* WateringScheduleRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		4F46A054254CB2AC005B2738 /* Plant+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Helpers.swift"; sourceTree = "<group>"; };
 		4FC0A0882574534800D0F360 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		4FC0A08B257458CC00D0F360 /* PlantRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRow.swift; sourceTree = "<group>"; };
+		4FCC6EA32576240E00CF99DA /* WateringSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringSchedule.swift; sourceTree = "<group>"; };
+		4FCC6EA6257627CD00CF99DA /* WateringScheduleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringScheduleRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				4F386E162560D7B300A0E91B /* PlantList.swift */,
 				4F386E192560DCDD00A0E91B /* PlantEditor.swift */,
 				4FC0A08B257458CC00D0F360 /* PlantRow.swift */,
+				4FCC6EA32576240E00CF99DA /* WateringSchedule.swift */,
+				4FCC6EA6257627CD00CF99DA /* WateringScheduleRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +196,7 @@
 				4F46A045254CAE21005B2738 /* Persistence.swift in Sources */,
 				4FC0A0892574534800D0F360 /* Notifier.swift in Sources */,
 				4F386E172560D7B300A0E91B /* PlantList.swift in Sources */,
+				4FCC6EA42576240E00CF99DA /* WateringSchedule.swift in Sources */,
 				4F46A055254CB2AC005B2738 /* Plant+Helpers.swift in Sources */,
 				4F46A048254CAE21005B2738 /* PlantEdCD.xcdatamodeld in Sources */,
 				4F386E142560D2A000A0E91B /* ImagePicker.swift in Sources */,
@@ -199,6 +206,7 @@
 				4F46A03E254CAE1C005B2738 /* ContentView.swift in Sources */,
 				4F386E112560CE6000A0E91B /* PlantProfile.swift in Sources */,
 				4F46A03C254CAE1C005B2738 /* PlantEdCDApp.swift in Sources */,
+				4FCC6EA7257627CD00CF99DA /* WateringScheduleRow.swift in Sources */,
 				4F386E0D2560CE5200A0E91B /* PlantCreationSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
