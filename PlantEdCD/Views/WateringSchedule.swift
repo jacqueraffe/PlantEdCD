@@ -38,7 +38,7 @@ struct WateringSchedule: View {
                     WateringScheduleRow(plant: plant)
                 }
             }
-        }
+        }.navigationTitle(Text("Watering Schedule"))
     }
 }
 

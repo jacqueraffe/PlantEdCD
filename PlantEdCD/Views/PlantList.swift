@@ -26,7 +26,7 @@ struct PlantList: View {
                 }
             }
             .onDelete(perform: deletePlants)
-        }
+        } .navigationTitle(Text("Plants"))
         .toolbar {
             HStack {
                 #if os(iOS)
