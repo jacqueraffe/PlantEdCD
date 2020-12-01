@@ -6,6 +6,17 @@ import UIKit
 
 extension Plant {
     
+    var readyToWater: Bool {
+        guard let lastWatered = lastWatered else {
+            return false
+        }
+        let twelveHoursAgo = Date().addingTimeInterval(-12*3600)
+        if lastWatered < twelveHoursAgo {
+            return true
+        }
+        return false
+    }
+    
     var wrappedName: String {
         get {
             name ?? ""

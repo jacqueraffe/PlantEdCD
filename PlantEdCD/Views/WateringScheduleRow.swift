@@ -10,7 +10,7 @@ import SwiftUI
 struct WateringScheduleRow: View {
     @ObservedObject var plant: Plant
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     var body: some View {
         HStack{
             if plant.photo != nil {
@@ -21,13 +21,15 @@ struct WateringScheduleRow: View {
                 if let nextWater = plant.nextWater {
                     Text("Next Water: \(nextWater.short)")
                 }
-                Button(action: {
-                    plant.lastWatered = Date()
-                    plant.nextWater = plant.computedNextWater
-                    try! viewContext.save()
-                }){
-                    Text("Watered")
-                } .buttonStyle(PlainButtonStyle())
+                if plant.readyToWater {
+                    Button(action: {
+                        plant.lastWatered = Date()
+                        plant.nextWater = plant.computedNextWater
+                        try! viewContext.save()
+                    }){
+                        Text("Watered")
+                    } .buttonStyle(PlainButtonStyle())
+                }
             }
         }
     }
