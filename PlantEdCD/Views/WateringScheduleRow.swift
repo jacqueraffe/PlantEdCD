@@ -29,7 +29,7 @@ struct WateringScheduleRow: View {
                     }){
                         Text("Watered")
                             .padding(5).foregroundColor(Color.green)
-                            .background(RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 2))
+                            .background(RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth:   2))
                     }.buttonStyle(PlainButtonStyle())
                 }
             }

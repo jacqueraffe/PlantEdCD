@@ -39,7 +39,7 @@ struct PlantProfile: View {
                     .scaledToFit()
             }
             Menu("Edit Photo") {
-                Button("Paste", action: camera)
+                Button("Paste", action: paste)
                 //TODO: Grey out paste if unavailable
                 Button("Camera", action: camera)
                     .disabled(!UIImagePickerController.isCameraDeviceAvailable(.rear))
