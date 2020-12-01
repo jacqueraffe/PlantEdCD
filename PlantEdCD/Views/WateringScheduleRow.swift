@@ -28,7 +28,9 @@ struct WateringScheduleRow: View {
                         try! viewContext.save()
                     }){
                         Text("Watered")
-                    } .buttonStyle(PlainButtonStyle())
+                            .padding(5).foregroundColor(Color.green)
+                            .background(RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 2))
+                    }.buttonStyle(PlainButtonStyle())
                 }
             }
         }

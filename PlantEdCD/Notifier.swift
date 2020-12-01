@@ -39,7 +39,7 @@ struct Notifier {
     do {
       let plants = try context.fetch(fetchRequest)
 
-      // Group by nextRead date.
+      // Group by nextWater date.
 
       for (nextWater, plants) in Dictionary(grouping: plants, by: { $0.nextWater! }) {
         let plantNames = plants.compactMap(\.name).joined(separator:", ")
