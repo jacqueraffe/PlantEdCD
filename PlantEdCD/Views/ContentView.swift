@@ -46,7 +46,9 @@ struct ContentView: View {
     }
     
     var typeListTab: some View {
-        Text("Types Coming Soon!")
+        NavigationView {
+            TypeList()
+        }
     }
     
 }

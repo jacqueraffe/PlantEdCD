@@ -9,11 +9,14 @@
         <relationship name="type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Type" inverseName="plants" inverseEntity="Type"/>
     </entity>
     <entity name="Type" representedClassName="Type" syncable="YES" codeGenerationType="class">
+        <attribute name="bio" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="Transformable"/>
+        <attribute name="wateringFrequency" optional="YES" attributeType="String"/>
         <relationship name="plants" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Plant" inverseName="type" inverseEntity="Plant"/>
     </entity>
     <elements>
         <element name="Plant" positionX="-63" positionY="-18" width="128" height="133"/>
-        <element name="Type" positionX="-63" positionY="9" width="128" height="73"/>
+        <element name="Type" positionX="-63" positionY="9" width="128" height="118"/>
     </elements>
 </model>

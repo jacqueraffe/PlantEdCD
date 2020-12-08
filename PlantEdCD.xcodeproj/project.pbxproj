@@ -20,6 +20,9 @@
 		4F46A048254CAE21005B2738 /* PlantEdCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F46A046254CAE21005B2738 /* PlantEdCD.xcdatamodeld */; };
 		4F46A051254CB23F005B2738 /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F46A050254CB23F005B2738 /* UIImageTransformer.swift */; };
 		4F46A055254CB2AC005B2738 /* Plant+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F46A054254CB2AC005B2738 /* Plant+Helpers.swift */; };
+		4F98DC54257FFC9200C7E89A /* TypeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F98DC53257FFC9200C7E89A /* TypeList.swift */; };
+		4F98DC57257FFDD500C7E89A /* TypeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F98DC56257FFDD500C7E89A /* TypeRow.swift */; };
+		4F98DC5A257FFF5500C7E89A /* Type+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F98DC59257FFF5500C7E89A /* Type+Helpers.swift */; };
 		4FC0A0892574534800D0F360 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0A0882574534800D0F360 /* Notifier.swift */; };
 		4FC0A08C257458CC00D0F360 /* PlantRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0A08B257458CC00D0F360 /* PlantRow.swift */; };
 		4FCC6EA42576240E00CF99DA /* WateringSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC6EA32576240E00CF99DA /* WateringSchedule.swift */; };
@@ -42,6 +45,9 @@
 		4F46A049254CAE21005B2738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F46A050254CB23F005B2738 /* UIImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
 		4F46A054254CB2AC005B2738 /* Plant+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Helpers.swift"; sourceTree = "<group>"; };
+		4F98DC53257FFC9200C7E89A /* TypeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeList.swift; sourceTree = "<group>"; };
+		4F98DC56257FFDD500C7E89A /* TypeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRow.swift; sourceTree = "<group>"; };
+		4F98DC59257FFF5500C7E89A /* Type+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Type+Helpers.swift"; sourceTree = "<group>"; };
 		4FC0A0882574534800D0F360 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		4FC0A08B257458CC00D0F360 /* PlantRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRow.swift; sourceTree = "<group>"; };
 		4FCC6EA32576240E00CF99DA /* WateringSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringSchedule.swift; sourceTree = "<group>"; };
@@ -71,6 +77,8 @@
 				4FC0A08B257458CC00D0F360 /* PlantRow.swift */,
 				4FCC6EA32576240E00CF99DA /* WateringSchedule.swift */,
 				4FCC6EA6257627CD00CF99DA /* WateringScheduleRow.swift */,
+				4F98DC53257FFC9200C7E89A /* TypeList.swift */,
+				4F98DC56257FFDD500C7E89A /* TypeRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -120,6 +128,7 @@
 				4F46A044254CAE21005B2738 /* Persistence.swift */,
 				4F46A050254CB23F005B2738 /* UIImageTransformer.swift */,
 				4F46A054254CB2AC005B2738 /* Plant+Helpers.swift */,
+				4F98DC59257FFF5500C7E89A /* Type+Helpers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,7 +209,10 @@
 				4F46A055254CB2AC005B2738 /* Plant+Helpers.swift in Sources */,
 				4F46A048254CAE21005B2738 /* PlantEdCD.xcdatamodeld in Sources */,
 				4F386E142560D2A000A0E91B /* ImagePicker.swift in Sources */,
+				4F98DC5A257FFF5500C7E89A /* Type+Helpers.swift in Sources */,
+				4F98DC54257FFC9200C7E89A /* TypeList.swift in Sources */,
 				4FC0A08C257458CC00D0F360 /* PlantRow.swift in Sources */,
+				4F98DC57257FFDD500C7E89A /* TypeRow.swift in Sources */,
 				4F46A051254CB23F005B2738 /* UIImageTransformer.swift in Sources */,
 				4F386E1A2560DCDD00A0E91B /* PlantEditor.swift in Sources */,
 				4F46A03E254CAE1C005B2738 /* ContentView.swift in Sources */,
