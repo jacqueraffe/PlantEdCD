@@ -12,11 +12,10 @@
         <attribute name="bio" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="photo" optional="YES" attributeType="Transformable"/>
-        <attribute name="wateringFrequency" optional="YES" attributeType="String"/>
         <relationship name="plants" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Plant" inverseName="type" inverseEntity="Plant"/>
     </entity>
     <elements>
         <element name="Plant" positionX="-63" positionY="-18" width="128" height="133"/>
-        <element name="Type" positionX="-63" positionY="9" width="128" height="118"/>
+        <element name="Type" positionX="-63" positionY="9" width="128" height="103"/>
     </elements>
 </model>
