@@ -47,7 +47,7 @@ struct ContentView: View {
     
     var typeListTab: some View {
         NavigationView {
-            //TypeList()
+            TypeList()
         }
     }
     

@@ -67,6 +67,7 @@ struct PersistenceController {
                         }
                     }
                 }
+                try! context.save()
             }
         })
     }

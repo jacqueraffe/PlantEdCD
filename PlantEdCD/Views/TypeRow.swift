@@ -17,9 +17,8 @@ struct TypeRow: View {
             }
             VStack(alignment:.leading) {
                 Text(type.wrappedName)
-                Text(type.bio!)
                 if let bio = type.bio {
-                    Text("Last Watered: \(bio)")
+                    Text("\(bio)")
                 }
             }
         }
