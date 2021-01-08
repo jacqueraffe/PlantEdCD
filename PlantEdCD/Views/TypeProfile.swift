@@ -1,24 +1,15 @@
 //
-//  TypeRow.swift
+//  TypeProfile.swift
 //  PlantEd
 //
-//  Created by Jacqueline Palevich on 12/8/20.
+//  Created by Jacqueline Palevich on 1/8/21.
 //
 
 import SwiftUI
 
-extension String {
-    var cliffNotes: String{
-        if let endOfFirstSentence = self.firstIndex(of: "."){
-            return String(self[...endOfFirstSentence])
-        } else {
-            return self
-        }
-    }
-}
-
-struct TypeRow: View {
+struct TypeProfile: View {
     @ObservedObject var type: Type
+    @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
         HStack{
@@ -28,10 +19,9 @@ struct TypeRow: View {
             VStack(alignment:.leading) {
                 Text(type.wrappedName)
                 if let bio = type.bio {
-                    Text("\(bio.cliffNotes)...")
+                    Text("\(bio)")
                 }
             }
         }
-        
     }
 }

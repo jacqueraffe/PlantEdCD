@@ -17,10 +17,16 @@ struct TypeList: View {
     private var types: FetchedResults<Type>
     
     var body: some View {
-        List{
-            ForEach(types, id: \.self) { type in
-                TypeRow(type: type)
-            }
-        }.navigationTitle(Text("Type List"))
+        NavigationView{
+            List{
+                ForEach(types, id: \.self) { type in
+                    NavigationLink(destination: TypeProfile(type: type)){
+                        TypeRow(type: type)
+                    }
+                }
+            }.navigationTitle(Text("Type List"))
+            
+        }
+        
     }
 }
