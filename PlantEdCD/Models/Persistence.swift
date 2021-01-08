@@ -32,6 +32,7 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "PlantEdCD")
+        let localContainer = container
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
@@ -49,6 +50,23 @@ struct PersistenceController {
                 Check the error message to determine what the actual problem was.
                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+            let context = localContainer.viewContext
+            if Type.allTypes(context: context).count == 0 {
+                //fill in types on first open
+                if let fileURL = Bundle.main.url(forResource: "houseplants", withExtension: "json") {
+                    let jsonData = try! Data(contentsOf: fileURL)
+                    let data: HouseplantCategoryDictionary = try! JSONDecoder().decode(HouseplantCategoryDictionary.self, from: jsonData)
+                    for (catagory, infoDictionary) in data{
+                        for (typeName, info) in infoDictionary{
+                            let type = Type(context: context)
+                            type.name = typeName
+                            type.bio = info.description
+                            type.builtIn = true
+                            type.catagory = catagory
+                        }
+                    }
+                }
             }
         })
     }
