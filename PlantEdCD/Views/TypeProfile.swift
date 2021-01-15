@@ -16,10 +16,12 @@ struct TypeProfile: View {
             if type.photo != nil {
                 Image(uiImage: type.photo! as! UIImage).resizable().scaledToFit()
             }
-            VStack(alignment:.leading) {
-                Text(type.wrappedName)
-                if let bio = type.bio {
-                    Text("\(bio)")
+            ScrollView{
+                VStack(alignment:.leading) {
+                    Text(type.wrappedName)
+                    if let bio = type.bio {
+                        Text("\(bio)")
+                    }
                 }
             }
         }

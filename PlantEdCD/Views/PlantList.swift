@@ -18,9 +18,12 @@ struct PlantList: View {
 
     @State private var newPlantIsPresented = false
     
+    @State private var searchText = ""
+    
     var body: some View {
         List {
-            ForEach(plants) { plant in
+            SearchBar(text: $searchText)
+            ForEach(filteredPlants) { plant in
                 NavigationLink(destination: editorView(for: plant)){
                     PlantRow(plant: plant)
                 }
@@ -86,4 +89,11 @@ struct PlantList: View {
             }
         }
     }
+    
+    private var filteredPlants : [Plant]{
+        plants.filter{ plant in
+            (plant.name!.contains(searchText) || searchText.isEmpty) || plant.typeName.contains(searchText)
+        }
+    }
+    
 }
