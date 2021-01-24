@@ -57,7 +57,6 @@ struct PlantList: View {
         let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         childContext.parent = viewContext
         return PlantCreationSheet(
-            context: childContext,
             plant: Plant(context: childContext),
             dismissAction: {
                 self.newPlantIsPresented = false
@@ -68,7 +67,7 @@ struct PlantList: View {
                     let nsError = error as NSError
                     fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                 }
-            })
+            }).environment(\.managedObjectContext, childContext)
     }
 
     private func addPlant() {

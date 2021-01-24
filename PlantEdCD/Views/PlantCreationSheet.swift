@@ -9,7 +9,7 @@ import CoreData
 import SwiftUI
 
 struct PlantCreationSheet: View {
-    let context: NSManagedObjectContext
+    @Environment(\.managedObjectContext) private var context
     @ObservedObject var plant: Plant
     
     let dismissAction: () -> Void
