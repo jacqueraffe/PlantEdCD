@@ -92,7 +92,7 @@ struct PlantList: View {
     
     private var filteredPlants : [Plant]{
         plants.filter{ plant in
-            (plant.name!.contains(searchText) || searchText.isEmpty) || plant.typeName.contains(searchText)
+            (plant.wrappedName.contains(searchText) || searchText.isEmpty) || plant.typeName.contains(searchText)
         }
     }
     
