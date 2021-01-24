@@ -13,6 +13,12 @@ struct PlantProfile: View {
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
     private let pasteboard = UIPasteboard.general
     
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Type.name, ascending: true)],
+        predicate: NSPredicate(format:"builtIn == true"),
+        animation: .default)
+    private var types: FetchedResults<Type>
+    
     var body: some View {
         
         let wateringFrequencyChoice = Binding(
@@ -21,8 +27,13 @@ struct PlantProfile: View {
         )
         return List{
             TextField("Name", text: $plant.wrappedName)
-            TextField("Type", text: $plant.typeName)
-                .disableAutocorrection(true)
+            
+            Picker("Type", selection: $plant.type) {
+                Text("None").tag(Type?.none)
+                ForEach(types, id: \.self) { type in
+                    Text(type.wrappedName).tag(type as Type?)
+                }
+            }
             DatePicker(selection: $plant.wrappedLastWatered, in: ...Date(), displayedComponents: .date){
                 Text("Select last date watered")
             }
