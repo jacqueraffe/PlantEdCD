@@ -36,6 +36,9 @@ struct PlantCreationSheet: View {
     
     private func save() {
         do {
+            if plant.lastWatered == nil {
+                plant.lastWatered = Date()
+            }
             plant.nextWater = plant.computedNextWater
             try context.save()
             Notifier.updateNotifications(context: context)
