@@ -33,6 +33,7 @@ struct ContentView: View {
     var plantListTab: some View {
         NavigationView {
             PlantList()
+            Text("Swipe right to see the plant list.")
         }
         .onAppear{
             Notifier.requestNotificationPermissions(context: viewContext)
@@ -42,12 +43,14 @@ struct ContentView: View {
     var wateringScheduleTab: some View {
         NavigationView {
             WateringSchedule()
+            Text("Swipe right to see the watering schedule.")
         }
     }
     
     var typeListTab: some View {
         NavigationView {
             TypeList()
+            Text("Swipe right to see the type list.")
         }
     }
     
