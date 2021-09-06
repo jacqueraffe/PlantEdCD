@@ -26,13 +26,21 @@ struct AboutView: View {
     
     @ViewBuilder
     var aboutText: some View {
-        Text("""
-I wrote this app for my Independent Studies class. I hope it helps you all to \
-remember to water your plants! :)
+        VStack{
+            Text("""
+    I wrote this app for my Independent Studies class. I hope it helps you all to \
+    remember to water your plants! :)
 
-Plant information provided by wikipedia.org/wiki/Houseplant under the \
-Creative Commons Attribution-ShareAlike License.
-""")
+    Plant information provided by wikipedia.org/wiki/Houseplant under the \
+    Creative Commons Attribution-ShareAlike License.\
+    My github:
+    https://github.com/jacqueraffe/PlantEdCD
+    """)
+            HStack{
+                Link("Source Code", destination: URL(string:"https://github.com/jacqueraffe/PlantEdCD" )!).padding()
+                Link("Wikipedia", destination: URL(string:"wikipedia.org/wiki/Houseplant" )!)            }.padding()
+        }
+        
     }
     
     var isWide: Bool {
