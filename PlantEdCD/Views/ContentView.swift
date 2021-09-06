@@ -27,7 +27,7 @@ struct ContentView: View {
                     Image(systemName: "list.dash")
                     Text("Types")
                 }
-            aboutTab
+            AboutView()
                 .tabItem{
                     Image(systemName: "gear")
                     Text("About")
@@ -57,21 +57,6 @@ struct ContentView: View {
             TypeList()
             Text("Swipe right to see the type list.")
         }
-    }
-    
-    var aboutTab: some View {
-        aboutText.frame(maxWidth: 300)
-    }
-    
-    @ViewBuilder
-    var aboutText: some View {
-        Text("""
-I wrote this app for my Independent Studies class. I hope it helps you all to \
-remember to water your plants! :)
-
-Plant information provided by wikipedia.org/wiki/Houseplant under the \
-Creative Commons Attribution-ShareAlike License.
-""")
     }
     
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F0BC62926E69314004C4835 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0BC62826E69314004C4835 /* AboutView.swift */; };
 		4F386E0D2560CE5200A0E91B /* PlantCreationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F386E0C2560CE5200A0E91B /* PlantCreationSheet.swift */; };
 		4F386E112560CE6000A0E91B /* PlantProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F386E102560CE6000A0E91B /* PlantProfile.swift */; };
 		4F386E142560D2A000A0E91B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F386E132560D29F00A0E91B /* ImagePicker.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F0BC62826E69314004C4835 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		4F386E0C2560CE5200A0E91B /* PlantCreationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCreationSheet.swift; sourceTree = "<group>"; };
 		4F386E102560CE6000A0E91B /* PlantProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProfile.swift; sourceTree = "<group>"; };
 		4F386E132560D29F00A0E91B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				4F98DC56257FFDD500C7E89A /* TypeRow.swift */,
 				4F9CEA0825A8DACF0076F4F7 /* TypeProfile.swift */,
 				4F9CEA0B25B143A40076F4F7 /* SearchBar.swift */,
+				4F0BC62826E69314004C4835 /* AboutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			files = (
 				4F46A045254CAE21005B2738 /* Persistence.swift in Sources */,
 				4FC0A0892574534800D0F360 /* Notifier.swift in Sources */,
+				4F0BC62926E69314004C4835 /* AboutView.swift in Sources */,
 				4F386E172560D7B300A0E91B /* PlantList.swift in Sources */,
 				4FCC6EA42576240E00CF99DA /* WateringSchedule.swift in Sources */,
 				4F46A055254CB2AC005B2738 /* Plant+Helpers.swift in Sources */,
