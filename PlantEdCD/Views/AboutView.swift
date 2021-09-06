@@ -38,7 +38,7 @@ struct AboutView: View {
     """)
             HStack{
                 Link("Source Code", destination: URL(string:"https://github.com/jacqueraffe/PlantEdCD" )!).padding()
-                Link("Wikipedia", destination: URL(string:"wikipedia.org/wiki/Houseplant" )!)            }.padding()
+                Link("Wikipedia", destination: URL(string:"https://en.wikipedia.org/wiki/Houseplant" )!)            }.padding()
         }
         
     }
