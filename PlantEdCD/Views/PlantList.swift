@@ -10,12 +10,12 @@ import SwiftUI
 
 struct PlantList: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Plant.name, ascending: true)],
         animation: .default)
     private var plants: FetchedResults<Plant>
-
+    
     @State private var newPlantIsPresented = false
     
     @State private var searchText = ""
@@ -23,19 +23,23 @@ struct PlantList: View {
     var body: some View {
         List {
             SearchBar(text: $searchText)
-            ForEach(filteredPlants) { plant in
-                NavigationLink(destination: editorView(for: plant)){
-                    PlantRow(plant: plant)
+            if plants.count == 0 {
+                Text("Tap the + button to add a new plant to your list.")
+            } else {
+                ForEach(filteredPlants) { plant in
+                    NavigationLink(destination: editorView(for: plant)){
+                        PlantRow(plant: plant)
+                    }
                 }
+                .onDelete(perform: deletePlants)
             }
-            .onDelete(perform: deletePlants)
         } .navigationTitle(Text("Plants"))
         .toolbar {
             HStack {
                 #if os(iOS)
                 EditButton()
                 #endif
-
+                
                 Button(action: addPlant) {
                     Label("Add Plant", systemImage: "plus")
                 }
@@ -69,15 +73,15 @@ struct PlantList: View {
                 }
             }).environment(\.managedObjectContext, childContext)
     }
-
+    
     private func addPlant() {
         self.newPlantIsPresented = true
     }
-
+    
     private func deletePlants(offsets: IndexSet) {
         withAnimation {
             offsets.map { plants[$0] }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {
