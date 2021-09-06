@@ -8,3 +8,5 @@ Need help keeping track of your plant's watering schedule? PlantEd Helps you tak
 + Notifications to remind user to water plant
 + Watering schedule to check what to water in upcoming days
 + List of plants and descriptions of them to learn more about plants
+
+Support page: https://jacqueraffe.github.io/PlantEdCD/
